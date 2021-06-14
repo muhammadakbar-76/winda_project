@@ -1,6 +1,11 @@
 body {
-    background-color: #0a0a0a;
+    background-color: #18191a;
 }
+
+div.container-fluid {
+    width: 90%;
+}
+
 .navbar-brand img {
     max-width: 100px;
     max-height: 100px;
@@ -23,7 +28,7 @@ section {
     background-color: white;
 }
 
-section#about {
+section {
     padding: 20px 15px 30px 15px; 
 }
 
@@ -44,7 +49,7 @@ section#about div.content {
 }
 
 section#about div.content p {
-    margin-top: 40px;
+    margin-top: 30px;
     text-align: justify;
 }
 
@@ -57,14 +62,6 @@ section#about div.content img {
 
 form,.card {
     margin: 0 80px;
-}
-
-h2.judul {
-    margin-top: 20px;
-}
-
-h2.about {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 section#about div.content h2.judul,section#about div.content hr {
