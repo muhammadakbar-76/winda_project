@@ -1,0 +1,105 @@
+body {
+    background-color: #0a0a0a;
+}
+.navbar-brand img {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+header {
+    background-image: url('../img/background.jpg');
+    background-size: cover;
+    min-height: 500px;
+}
+
+header h1{
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 48px;
+}
+
+section {
+    min-height: 500px;
+    background-color: white;
+}
+
+section#about {
+    padding: 20px 15px 30px 15px; 
+}
+
+hr {
+	width: 250px;
+	border-top: 3px solid #999;
+}
+
+aside.right {
+    min-height: 500px;
+    background-image: url('../img/aside.JPG');
+    background-size: cover;
+}
+
+section#about div.content {
+    padding: 20px;
+    margin-top: 10px;
+}
+
+section#about div.content p {
+    margin-top: 20px;
+    text-align: justify;
+}
+
+section#about div.content img {
+    width: 200px;
+    height: 150px;
+    padding-right: 10px;
+    float: left;
+}
+
+form,.card {
+    margin: 0 80px;
+}
+
+h2.judul {
+    margin-top: 20px;
+}
+
+h2.about {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+section#about div.content h2.judul,section#about div.content hr {
+    transform: translate(0px,220px);
+}
+
+h2,hr {
+    transition: 0.5s;
+}
+
+section#about div.content hr.muncul,h2.muncul {
+    transform: translate(0px,0px);
+}
+.pAtas {
+	opacity: 0;
+	transform: translate(0, -50px);
+	transition: 1s;
+}
+
+.pAtas.pMuncul {
+	opacity: 1;
+	transform: translate(0,0);
+}
+
+figure {
+    min-height: 100px;
+    background-image: url('../img/p2.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 30px 20px 0px;
+}
+
+figure h3 {
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    padding-top: 30px;
+}
