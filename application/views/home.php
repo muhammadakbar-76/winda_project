@@ -23,7 +23,8 @@
     <h4 class="text-center">Kontak</h4><hr style="width: 25%;">
     <div class="row">
         <div class="col-12">
-            <p>&#128231; marketing2@sstc.co.id ; marketing@sstc.co.id</p>
+            <p>&#128231; marketing@sstc.co.id</p>
+            <p>&#128231; marketing2@sstc.co.idmarketing@sstc.co.id</p>
             <p>&#9742; (0511) 3354708, 4366275, 3352372</p>
             <p>&#128439; (0511) 4368086</p>
         </div>
