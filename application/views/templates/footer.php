@@ -3,7 +3,7 @@
 <div class="container text-center">
 <div class="row">
 <div class="col-sm-12">
-    <p>&copy;Copyright 2021 | Built by Winda Dwi Anggraini</p>
+    <p>&copy;Copyright 2021, PT. Surya Satrya Timur | Built by Winda Dwi Anggraini</p>
 </div>
 </div>
 </div>
