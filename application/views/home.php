@@ -11,7 +11,7 @@
 </section>
 
 <section id="lokasi">
-<h2 class="text-center">Lokasi Kami</h2><hr>
+<div class="col-sm-9"><h2 class="text-center">Lokasi Kami</h2><hr></div>
 <div class="row">
 <div class="col-sm-8">
 <p style="font-family: monoscape; font-size: 20px;padding: 0 0 0 80px;">Jalan Ir. H. Pangeran Muhammad Noor No.99, Kuin Cerucuk, Kec. Banjarmasin Bar., Kota Banjarmasin, Kalimantan Selatan 70128</p>
@@ -20,7 +20,7 @@
 </div>
 </div>
 <div class="col-sm-4" style="border-left: 2px solid grey;">
-    <h4 class="text-center">Kontak</h4><hr style="width: 25%;">
+    <h4 class="text-center">Kontak</h4><hr>
     <div class="row">
         <div class="col-12">
             <p>&#128231; marketing@sstc.co.id</p>
