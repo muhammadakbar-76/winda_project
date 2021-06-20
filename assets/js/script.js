@@ -17,3 +17,7 @@ $('button.about').on('click', function(){
     })
    
 });
+
+    if ($(document).attr('title') == 'Pesan Barang') {
+        $('body').css('background-color', 'white');
+    }

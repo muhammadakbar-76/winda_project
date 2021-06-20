@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?= base_url();?>assets/css/bootstrap.css">
     <link rel="stylesheet" href="<?= base_url();?>assets/css/style.css">
-    <title>Document</title>
+    <title><?= $judul; ?></title>
 </head>
 <body>
 <div class="container-fluid">
@@ -36,9 +36,9 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav ml-auto">
-      <a class="nav-link active mr-4" href="#"><h5>Home</h5><span class="sr-only">(current)</span></a>
-      <a class="nav-link mr-4" href="#"><h5>Features</h5></a>
-      <a class="nav-link mr-4" href="#"><h5>Pricing</h5></a>
+      <a class="nav-link active mr-4" href="<?= base_url() ?>"><h5>Home</h5><span class="sr-only">(current)</span></a>
+      <a class="nav-link mr-4" href="<?= base_url("barang") ?>"><h5>Barang</h5></a>
+      <a class="nav-link mr-4" href="#"><h5>Status</h5></a>
       <a class="nav-link mr-4" href="#"><h5>Login</h5></a>
     </div>
   </div>
