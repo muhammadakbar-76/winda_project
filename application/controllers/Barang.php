@@ -11,8 +11,8 @@ class Barang extends CI_Controller {
     public function index() {
         $data['judul'] = "Pesan Barang";
         if (isset($_SESSION['user_logged'])) {
-            $array = json_decode(json_encode($_SESSION['user_logged']), true);
-            $data['username'] = $array['username'];
+            $nama = json_decode(json_encode($_SESSION['user_logged']), true);
+            $data['username'] = $nama['username'];
         }
         $this->load->view('templates/header1', $data);
         $this->load->view('barang');

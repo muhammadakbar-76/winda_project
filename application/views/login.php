@@ -18,10 +18,13 @@
             <div class="col-12 col-md-6 text-center mt-5 mx-auto p-4">
                 <h1 class="h2">Login</h1>
                 <p class="lead">Silahkan masuk untuk melanjutkan</p>
+                <?php if ($this->session->flashdata('gagal_login') == TRUE) { ?>
+                <p class="text-danger"><?= $this->session->flashdata('gagal_login');?></p>
+                <?php } ?>
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-md-5 mx-auto mt-5">
+            <div class="col-12 col-md-5 mx-auto mt-2">
                 <form action="<?php site_url('login.php') ?>" method="POST">
                     <div class="form-group">
                         <label for="email">Email</label>
@@ -41,7 +44,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="submit" class="btn btn-success w-100" value="Login" />
+                        <button type="submit" class="btn btn-success w-100" name="submit">Submit</button>
                     </div>
 
                 </form>

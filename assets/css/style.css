@@ -7,6 +7,7 @@ body {
 html {
     position: relative;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 nav.navbar {
@@ -16,6 +17,29 @@ nav.navbar {
 div.dropdown-menu {
     right: 0;
     left: unset;
+}
+
+a div {
+    text-decoration: none;
+    color: black;
+}
+
+div.judul-barang {
+    height: 40px;
+    background-color: gray;
+    color: white;
+}
+
+.col-sm-9 {
+    flex: 0 0 80%;
+    max-width: 80%;
+}
+
+div.kotak-hijau {
+    border-bottom: 1px solid grey;
+    background-color: green;
+    height: 40px;
+    width: 100%;
 }
 
 footer {

@@ -17,10 +17,10 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav ml-3">
-      <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-link" href="#">Features</a>
-      <a class="nav-link" href="#">Pricing</a>
-      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      <a class="nav-link" href="<?= base_url() ?>">Home</a>
+      <a class="nav-link active" href="<?= base_url('barang') ?>">Pemesanan</a>
+      <a class="nav-link" href="#">Status</a>
+      <a class="nav-link" href="<?= base_url('login/logout') ?>" tabindex="-1" aria-disabled="true">Logout</a>
     </div>
   </div>
   <div class="mr-auto">
@@ -32,8 +32,7 @@
   <i class="bi bi-person-circle"></i> <?= $username; ?>
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Logout</a>
-    <a class="dropdown-item" href="#">Status Pengiriman</a>
+    <a class="dropdown-item text-center" href="<?= base_url('login/logout') ?>">Logout</a>
   </div>
 </div>
   </div>

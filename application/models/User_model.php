@@ -11,7 +11,12 @@ class User_model extends CI_Model
         $this->db->where('email', $post["email"])
                 ->or_where('username', $post["email"]);
         $user = $this->db->get($this->_table)->row();
-        $isPasswordTrue = password_verify($post["password"], $user->password);
+        if (!empty($user)) {
+            $isPasswordTrue = password_verify($post["password"], $user->password);
+        }
+        else {
+            $isPasswordTrue = FALSE;
+        }
         // jika user terdaftar
         if($user && $isPasswordTrue){
 
@@ -23,7 +28,13 @@ class User_model extends CI_Model
         }
         
         // login gagal
-		return false;
+        if (isset($_POST['submit']) && empty($user)) {
+            $this->session->set_flashdata('gagal_login','email/username yang anda masukkan salah');
+        }
+        elseif (isset($_POST['submit']) && empty($isPasswordTrue)) {
+            $this->session->set_flashdata('gagal_login','password yang anda masukkan salah');
+        }
+        return false;
     }
 
     public function isNotLogin(){
