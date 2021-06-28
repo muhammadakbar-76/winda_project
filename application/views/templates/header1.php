@@ -19,7 +19,7 @@
     <div class="navbar-nav ml-3">
       <a class="nav-link" href="<?= base_url() ?>">Home</a>
       <a class="nav-link active" href="<?= base_url('barang') ?>">Pemesanan</a>
-      <a class="nav-link" href="#">Status</a>
+      <a class="nav-link" href="<?= base_url("status") ?>">Status</a>
       <a class="nav-link" href="<?= base_url('login/logout') ?>" tabindex="-1" aria-disabled="true">Logout</a>
     </div>
   </div>
