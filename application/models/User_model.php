@@ -22,7 +22,7 @@ class User_model extends CI_Model
 
                 // login sukses yay!
                 $this->session->set_userdata(['user_logged' => $user]);
-                $this->_updateLastLogin($user->id);
+                $this->_updateLastLogin($user->id_user);
                 return true;
             
         }
@@ -42,7 +42,7 @@ class User_model extends CI_Model
     }
 
     private function _updateLastLogin($user_id){
-        $sql = "UPDATE {$this->_table} SET last_login=now() WHERE id={$user_id}";
+        $sql = "UPDATE {$this->_table} SET last_login=now() WHERE id_user={$user_id}";
         $this->db->query($sql);
     }
 

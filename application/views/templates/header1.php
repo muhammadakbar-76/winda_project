@@ -29,10 +29,11 @@
     </div>
   <div class="dropdown d-inline-block">
   <button class="btn btn-success dropdown-toggle p-3 mr-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  <i class="bi bi-person-circle"></i> <?= $username; ?>
+  <i class="bi bi-person-circle"></i> <?= $username->username; ?>
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item text-center" href="<?= base_url('login/logout') ?>">Logout</a>
+    <a class="dropdown-item text-center" href="<?= base_url('login/logout') ?>">Riwayat Transaksi</a>
   </div>
 </div>
   </div>

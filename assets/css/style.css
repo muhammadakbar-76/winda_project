@@ -6,7 +6,7 @@ body {
 
 html {
     position: relative;
-    min-height: 100vh;
+    min-height: 140vh;
     overflow-x: hidden;
 }
 
@@ -15,7 +15,7 @@ nav.navbar {
 }
 
 div.dropdown-menu {
-    right: 0;
+    right: -12px;
     left: unset;
 }
 
