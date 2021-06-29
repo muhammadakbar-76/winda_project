@@ -75,8 +75,20 @@ $('button.about').on('click', function(){
    
 });
 
-if ($(document).attr('title') != 'Selamat Datang') {
+if ($(document).attr('title') == 'Selamat Datang') {
+    $('a.nav-link').removeClass('active');
+    $('a.nav-link:nth-child(1)').addClass('active');
+  }
+else if ($(document).attr('title') == 'Pesan Barang') {
+    $('body').css('min-height', '110vh');
     $('body').css('background-color', 'white');
+    $('a.nav-link').removeClass('active');
+    $('a.nav-link:nth-child(2)').addClass('active');
+  }
+  else {
+    $('body').css('background-color', 'white');
+    $('a.nav-link').removeClass('active');
+    $('a.nav-link:nth-child(3)').addClass('active');
   }
 
 $('button.add').on('click', function(){

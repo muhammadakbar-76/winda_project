@@ -47,7 +47,7 @@
 </table>
     </div>
     <div class="col-sm-4 pl-0">
-    <p class="mt-3">Keranjang Penjualan</p><hr style="width: 100%;">
+    <p class="mt-3">Keranjang Pemesanan</p><hr style="width: 100%;">
     <table class="table table-bordered">
   <thead class="thead-light">
     <tr>

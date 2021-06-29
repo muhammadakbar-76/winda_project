@@ -6,8 +6,17 @@ body {
 
 html {
     position: relative;
-    min-height: 140vh;
+    min-height: 100vh;
     overflow-x: hidden;
+}
+
+.gif {
+    height: 250px;
+    width: 350px;
+}
+
+h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 nav.navbar {

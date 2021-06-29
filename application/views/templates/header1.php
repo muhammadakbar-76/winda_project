@@ -1,3 +1,34 @@
+<?php 
+
+$hari = array ( 1 =>    'Senin',
+			'Selasa',
+			'Rabu',
+			'Kamis',
+			'Jumat',
+			'Sabtu',
+			'Minggu'
+		);
+
+function tanggal_indo($tanggal)
+{
+	$bulan = array (1 =>   'Januari',
+				'Februari',
+				'Maret',
+				'April',
+				'Mei',
+				'Juni',
+				'Juli',
+				'Agustus',
+				'September',
+				'Oktober',
+				'November',
+				'Desember'
+			);
+	$split = explode('-', $tanggal);
+	return $split[2] . ' ' . $bulan[ (int)$split[1] ] . ' ' . $split[0];
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,14 +49,14 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav ml-3">
       <a class="nav-link" href="<?= base_url() ?>">Home</a>
-      <a class="nav-link active" href="<?= base_url('barang') ?>">Pemesanan</a>
+      <a class="nav-link" href="<?= base_url('barang') ?>">Pemesanan</a>
       <a class="nav-link" href="<?= base_url("status") ?>">Status</a>
       <a class="nav-link" href="<?= base_url('login/logout') ?>" tabindex="-1" aria-disabled="true">Logout</a>
     </div>
   </div>
   <div class="mr-auto">
     <div class="d-inline-block mr-2">
-      <?= date("l, d F Y"); ?>
+      <?= $hari[date('N')]; ?>, <?= tanggal_indo(date('Y-m-d')); ?>
     </div>
   <div class="dropdown d-inline-block">
   <button class="btn btn-success dropdown-toggle p-3 mr-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
