@@ -85,10 +85,14 @@ else if ($(document).attr('title') == 'Pesan Barang') {
     $('a.nav-link').removeClass('active');
     $('a.nav-link:nth-child(2)').addClass('active');
   }
-  else {
+  else if ($(document).attr('title') == 'Status Pemesanan') {
     $('body').css('background-color', 'white');
     $('a.nav-link').removeClass('active');
     $('a.nav-link:nth-child(3)').addClass('active');
+  }
+  else {
+    $('body').css('background-color', 'white');
+    $('a.nav-link').removeClass('active');
   }
 
 $('button.add').on('click', function(){

@@ -1,5 +1,7 @@
 <?php 
 
+$a = $_SERVER['PHP_SELF'];
+
 $hari = array ( 1 =>    'Senin',
 			'Selasa',
 			'Rabu',
@@ -51,7 +53,11 @@ function tanggal_indo($tanggal)
       <a class="nav-link" href="<?= base_url() ?>">Home</a>
       <a class="nav-link" href="<?= base_url('barang') ?>">Pemesanan</a>
       <a class="nav-link" href="<?= base_url("status") ?>">Status</a>
-      <a class="nav-link" href="<?= base_url('login/logout') ?>" tabindex="-1" aria-disabled="true">Logout</a>
+      <?php if (strpos($a, 'admin') !== false) { ?>
+      <a class="nav-link" href="<?= base_url('adminlogin/logout') ?>" tabindex="-1" aria-disabled="true">Logout</a>
+      <?php } else { ?>
+        <a class="nav-link" href="<?= base_url('login/logout') ?>" tabindex="-1" aria-disabled="true">Logout</a>
+      <?php } ?>
     </div>
   </div>
   <div class="mr-auto">
@@ -59,7 +65,11 @@ function tanggal_indo($tanggal)
       <?= $hari[date('N')]; ?>, <?= tanggal_indo(date('Y-m-d')); ?>
     </div>
   <div class="dropdown d-inline-block">
-  <button class="btn btn-success dropdown-toggle p-3 mr-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <?php if (strpos($a, 'admin') !== false) { ?>
+    <button class="btn btn-primary dropdown-toggle p-3 mr-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <?php } else { ?>
+        <button class="btn btn-success dropdown-toggle p-3 mr-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <?php } ?>
   <i class="bi bi-person-circle"></i> <?= $username->username; ?>
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
