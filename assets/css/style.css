@@ -6,8 +6,18 @@ body {
 
 html {
     position: relative;
-    min-height: 100vh;
+    min-height: 120vh;
     overflow-x: hidden;
+}
+
+h5 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.data-penjualan {
+    border: 1.5px solid gray;
+    padding: 10px;
+    margin: 20px 0 20px;
 }
 
 .gif {
