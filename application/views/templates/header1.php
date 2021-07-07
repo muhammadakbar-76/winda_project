@@ -57,11 +57,7 @@ function tanggal_indo($tanggal)
       <a class="nav-link" href="<?= base_url() ?>">Home</a>
       <a class="nav-link" href="<?= base_url('barang') ?>">Pemesanan</a>
       <a class="nav-link" href="<?= base_url("status") ?>">Status</a>
-      <?php if (strpos($a, 'admin') !== false) { ?>
-      <a class="nav-link" href="<?= base_url('adminlogin/logout') ?>" tabindex="-1" aria-disabled="true">Logout</a>
-      <?php } else { ?>
-        <a class="nav-link" href="<?= base_url('login/logout') ?>" tabindex="-1" aria-disabled="true">Logout</a>
-      <?php } ?>
+      <a class="nav-link" href="<?= base_url('login/logout') ?>" tabindex="-1" aria-disabled="true">Logout</a>
     </div>
   </div>
   <div class="mr-auto">

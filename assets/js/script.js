@@ -1,3 +1,4 @@
+console.log(base);
 let valPesan = '',
 m = '',
 n = 1,
@@ -5,9 +6,11 @@ totalHarga1 = '',
 totalHarga2 = '',
 harga1 = '',
 harga2 = '',
-    n1 = '',
-    n2 = '',
-    total = '';
+n1 = '',
+n2 = '',
+total = '',
+barang = 'B-001',
+tahun = new Date().getFullYear();
 
 // Create our number formatter.
 var formatter = new Intl.NumberFormat('id-ID', {
@@ -55,6 +58,46 @@ function formPemesanan(v1,v2) {
   $('form.pemesanan input:nth-child(4)').val(v2);
 }
 
+function getDataChart(barang,tahun) {
+  $.ajax({
+    url: `${base}admin/getDataPenjualan/${barang}/${tahun}`,
+    success: m => {
+      let values = Array(12).fill(null);
+      let bulanIni = new Date().getMonth();
+      let totalPenjualanBulanIni = 0;
+      let totalPenjualanTahunIni = 0;
+      m.result.forEach(element => {
+        let n = element.tgl_penjualan.split(`-`,2).map(x=>+x);
+        if (n[1]-1 == bulanIni) {
+          totalPenjualanBulanIni += parseInt(element.total_brg);
+        }
+        values[n[1]-1] += parseInt(element.total_brg);
+        totalPenjualanTahunIni += parseInt(element.total_brg);
+      });
+      console.log(values);
+      let data = {
+        // A labels array that can contain any sort of values
+        labels: ['Jan','Feb','Mar', 'Apr', 'Mei', 'Jun', 'Jul','Agu','Sep','Okt','Nov','Des'],
+        // Our series array that contains series objects or in this case series data arrays
+        series: [
+          values
+        ]
+      };
+      
+      // Create a new line chart object where as first parameter we pass in a selector
+      // that is resolving to our chart container element. The Second parameter
+      // is the actual data object.
+      new Chartist.Line('.ct-chart', data);
+
+      $('span.penjualan-bulan-ini').text(totalPenjualanBulanIni);
+      $('span.penjualan-tahun-ini').text(totalPenjualanTahunIni);
+    },
+    error: (e) => {
+      console.log(e.textContent);
+    }
+  });
+}
+
 $('button.about').on('click', function(){
     $('.my-auto').hide('slow', function(){
         $('.my-auto').remove();
@@ -86,25 +129,14 @@ else if ($(document).attr('title') == 'Pesan Barang') {
   }
   else if ($(document).attr('title') == 'Status Pemesanan') {
     $('body').css('background-color', 'white');
+    $('html').css('min-height','100vh');
     $('a.nav-link').removeClass('active');
     $('a.nav-link:nth-child(3)').addClass('active');
   }
   else if($(document).attr('title') == 'Menu Admin') {
     $('body').css('background-color', 'white');
     $('a.nav-link').removeClass('active');
-    var data = {
-      // A labels array that can contain any sort of values
-      labels: ['Jan','Feb','Mar', 'Apr', 'Mei', 'Jun', 'Jul','Agu','Sep','Okt','Nov','Des'],
-      // Our series array that contains series objects or in this case series data arrays
-      series: [
-        [,,116, 189, 200, 167, 98, 175, ]
-      ]
-    };
-    
-    // Create a new line chart object where as first parameter we pass in a selector
-    // that is resolving to our chart container element. The Second parameter
-    // is the actual data object.
-    new Chartist.Line('.ct-chart', data);
+    getDataChart(barang,tahun);
   }
 
 $('button.add').on('click', function(){
@@ -279,4 +311,23 @@ $('button.add').on('click', function(){
     else {
       swal("Data empty!", "There is no data", "error");
     }
+  });
+
+  $('.dropdown-menu.barang a').on('click', function() {
+    $('.dropdown-menu.barang a').removeClass('active');
+      $(this).addClass('active');
+      if ($(this).text() == 'Sampah Tanah/Kayu') {
+        barang = 'B-001'
+      }
+      else {
+        barang = 'B-002'
+      }
+      getDataChart(barang,tahun);
+  });
+
+  $('.dropdown-menu.tahun a').on('click', function() {
+    $('.dropdown-menu.tahun a').removeClass('active');
+      $(this).addClass('active');
+      tahun = $(this).text();
+      getDataChart(barang,tahun);
   });

@@ -17,11 +17,15 @@ class User_model extends CI_Model
         else {
             $isPasswordTrue = FALSE;
         }
+
         // jika user terdaftar
         if($user && $isPasswordTrue){
-
-                // login sukses yay!
+            if ($user->jabatan == 'Super Admin') {
+                $this->session->set_userdata(['admin_logged' => $user]);
+            } else {
                 $this->session->set_userdata(['user_logged' => $user]);
+            }
+                // login sukses yay!
                 $this->_updateLastLogin($user->id_user);
                 return true;
             
@@ -39,6 +43,10 @@ class User_model extends CI_Model
 
     public function isNotLogin(){
         return $this->session->userdata('user_logged') === null;
+    }
+
+    public function isNotLoginAdmin(){
+        return $this->session->userdata('admin_logged') === null;
     }
 
     private function _updateLastLogin($user_id){

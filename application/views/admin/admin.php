@@ -23,31 +23,51 @@
 <div class="col-sm-10">
 
 <div class="d-flex justify-content-between ml-5">
+
+<span class="badge badge-primary">
 <div class="data-penjualan">
     <h5>Data Penjualan Barang</h5>
-    <select name="nama-barang" id="">
-        <option value="Sampah Tanah/Kayu">Sampah Tanah/Kayu</option>
-        <option value="Sampah Sibitan">Sampah Sibitan</option>
-    </select>
-    <select name="tahun-barang" id="">
-        <option value="2021">2021</option>
-        <option value="2022">2022</option>
-    </select>
+    <div class="btn-group">
+  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Jenis Barang
+  </button>
+  <div class="dropdown-menu barang">
+  <a class="dropdown-item active" href="#">Sampah Tanah/Kayu</a>
+  <a class="dropdown-item" href="#">Sampah Sibitan</a>
+  </div>
 </div>
 
+<div class="btn-group">
+  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Tahun
+  </button>
+  <div class="dropdown-menu tahun">
+  <a class="dropdown-item active" href="#">2021</a>
+  <a class="dropdown-item" href="#">2022</a>
+  </div>
+</div>
+
+</div>
+</span>
+
+<span class="badge badge-primary">
 <div class="data-penjualan">
     <h5>Penjualan Bulan Ini</h5>
-    <span>999</span>
+    <span class="penjualan-bulan-ini">999</span>
 </div>
+</span>
 
+<span class="badge badge-primary">
 <div class="data-penjualan">
     <h5>Penjualan Tahun 2021</h5>
-    <span>999</span>
+    <span class="penjualan-tahun-ini">999</span>
 </div>
+</span>
 
 </div>
 
 <div class="ct-chart ct-major-eleventh"></div>
+
 </div>
 </div>
 </div>
